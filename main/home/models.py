@@ -30,7 +30,8 @@ class product(models.Model):
     pro_name = models.CharField(max_length=50)
     pro_desc = models.CharField(max_length=200)
     pro_cate = models.ForeignKey(category, on_delete=models.CASCADE, null=True)
-    stock = models.IntegerField()
+    pro_img = models.ImageField(upload_to='products',null=True)
+    price = models.IntegerField(null=True)
 
     class Meta:
         verbose_name = ("product")

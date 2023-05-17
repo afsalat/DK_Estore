@@ -9,4 +9,5 @@ class cateadmin(admin.ModelAdmin):
 
 admin.site.register(category,cateadmin)
 
+
 admin.site.register(product)

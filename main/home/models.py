@@ -23,7 +23,7 @@ class category(models.Model):
 
 
 
-# individual product list
+# featured product list
 
 class featured_product(models.Model):
 
@@ -44,6 +44,8 @@ class featured_product(models.Model):
         return reverse("featured_product_detail", kwargs={"pk": self.pk})
 
 
+# leatest product list
+
 class leatest_product(models.Model):
 
     pro_name = models.CharField(max_length=150)
@@ -61,4 +63,23 @@ class leatest_product(models.Model):
     
     def get_absolute_url(self):
         return reverse("leatest_product_detail", kwargs={"pk": self.pk})
+    
+
+class footer_details(models.Model):
+
+    company_name = models.CharField(max_length=250)
+    description = models.TextField()
+    location = models.CharField(max_length=350)
+    email_id = models.EmailField(max_length=254)
+    contact_number = models.IntegerField()
+    warning_message = models.CharField(max_length=50)
+    twitter_link = models.CharField(max_length=250)
+    facebook_link = models.CharField(max_length=250)
+    linkedln_link = models.CharField(max_length=250)
+    instagram_link = models.CharField(max_length=250)
+
+    c_d = "Company Details"
+
+    def __str__(self):
+        return self.c_d
     

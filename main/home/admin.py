@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import featured_product,category,leatest_product
+from .models import featured_product,category,leatest_product,footer_details
 
 # Register your models here.
 
@@ -13,3 +13,5 @@ admin.site.register(category,cateadmin)
 admin.site.register(featured_product)
 
 admin.site.register(leatest_product)
+
+admin.site.register(footer_details)

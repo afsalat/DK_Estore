@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import category,featured_product,leatest_product
+from .models import category,featured_product,leatest_product,footer_details
 
 # Create your views here.
 
@@ -10,5 +10,13 @@ def entry(request):
     featured_pro = featured_product.objects.all()
 
     leatest_pro = leatest_product.objects.all()
+
+    footer_detail = footer_details.objects.all()
+
     
-    return render(request, 'index.html',{'cate':cat_list,'f_pro':featured_pro,'l_pro':leatest_pro})
+    return render(request, 'index.html',{
+        'cate':cat_list,
+        'f_pro':featured_pro,
+        'l_pro':leatest_pro,
+        'lxl':footer_detail
+        })

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import product,category
+from .models import featured_product,category,leatest_product
 
 # Register your models here.
 
@@ -10,4 +10,6 @@ class cateadmin(admin.ModelAdmin):
 admin.site.register(category,cateadmin)
 
 
-admin.site.register(product)
+admin.site.register(featured_product)
+
+admin.site.register(leatest_product)

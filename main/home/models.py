@@ -8,7 +8,7 @@ class category(models.Model):
 
     cate_name = models.CharField(max_length=260, unique=True)
     slug = models.SlugField(max_length=240, unique=True)
-    cate_img = models.ImageField(upload_to='media')
+    cate_img = models.ImageField(upload_to='category_list')
 
     class Meta:
         verbose_name = ("category")
@@ -25,21 +25,40 @@ class category(models.Model):
 
 # individual product list
 
-class product(models.Model):
+class featured_product(models.Model):
 
     pro_name = models.CharField(max_length=50)
-    pro_desc = models.CharField(max_length=200)
+    pro_desc = models.TextField()
     pro_cate = models.ForeignKey(category, on_delete=models.CASCADE, null=True)
-    pro_img = models.ImageField(upload_to='products',null=True)
+    pro_img = models.ImageField(upload_to='featured_products',null=True)
     price = models.IntegerField(null=True)
 
     class Meta:
-        verbose_name = ("product")
-        verbose_name_plural = ("products")
+        verbose_name = ("featured_product")
+        verbose_name_plural = ("featured_products")
 
     def __str__(self):
         return self.pro_name
 
     def get_absolute_url(self):
-        return reverse("product_detail", kwargs={"pk": self.pk})
+        return reverse("featured_product_detail", kwargs={"pk": self.pk})
+
+
+class leatest_product(models.Model):
+
+    pro_name = models.CharField(max_length=150)
+    pro_desc = models.TextField()
+    pro_cate = models.ForeignKey(category, on_delete=models.CASCADE, null=True)
+    pro_img = models.ImageField(upload_to='leatest_products', null=True)
+    price = models.IntegerField()
+
+    class Meta:
+        verbose_name = ("leatest_products")
+        verbose_name_plural = ("leatest_products")
+
+    def __str__(self):
+        return self.pro_name
+    
+    def get_absolute_url(self):
+        return reverse("leatest_product_detail", kwargs={"pk": self.pk})
     

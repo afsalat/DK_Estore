@@ -1,5 +1,5 @@
+{% extends 'base.html' %}
 {% load static %}
-
 <html lang="en">
 
 <head>
@@ -8,103 +8,12 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid">
-        <div class="row bg-secondary py-1 px-xl-5">
-            <div class="col-lg-6 d-none d-lg-block">
-                <div class="d-inline-flex align-items-center h-100">
-                    <a class="text-body mr-3" href="">About</a>
-                    <a class="text-body mr-3" href="">Contact</a>
-                    <a class="text-body mr-3" href="">Help</a>
-                    <a class="text-body mr-3" href="">FAQs</a>
-                </div>
-            </div>
-            <div class="col-lg-6 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">Sign in</button>
-                            <button class="dropdown-item" type="button">Sign up</button>
-                        </div>
-                    </div>
-                    <div class="btn-group mx-2">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">USD</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">EUR</button>
-                            <button class="dropdown-item" type="button">GBP</button>
-                            <button class="dropdown-item" type="button">CAD</button>
-                        </div>
-                    </div>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">EN</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">FR</button>
-                            <button class="dropdown-item" type="button">AR</button>
-                            <button class="dropdown-item" type="button">RU</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-inline-flex align-items-center d-block d-lg-none">
-                    <a href="" class="btn px-0 ml-2">
-                        <i class="fas fa-heart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
-                    </a>
-                    <a href="" class="btn px-0 ml-2">
-                        <i class="fas fa-shopping-cart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
-            <div class="col-lg-4">
-                <a href="" class="text-decoration-none">
-                    <span class="h1 text-uppercase text-primary bg-dark px-2">DK</span>
-                    <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">E-store</span>
-                </a>
-            </div>
-            <div class="col-lg-4 col-6 text-left">
-                <form action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for products">
-                        <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
-                                <i class="fa fa-search"></i>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-lg-4 col-6 text-right">
-                <p class="m-0">Customer Service</p>
-                <h5 class="m-0">+012 345 6789</h5>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
 
-
+    {% block home %}
+    
     <!-- Navbar Start -->
     <div class="container-fluid bg-dark mb-30">
         <div class="row px-xl-5">
@@ -146,8 +55,8 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a href="shop.html" class="nav-item nav-link">Shop</a>
+                            <a href="/" class="nav-item nav-link active">Home</a>
+                            <a href="more_products/" class="nav-item nav-link">Shop</a>
                             <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
@@ -174,8 +83,7 @@
         </div>
     </div>
     <!-- Navbar End -->
-
-
+    
     <!-- Carousel Start -->
     <div class="container-fluid mb-3">
         <div class="row px-xl-5">
@@ -440,95 +348,9 @@
     <!-- Vendor End -->
 
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
-        <div class="row px-xl-5 pt-5">
-            {% for fs in lxl %}
-            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
-                <h5 class="text-secondary text-uppercase mb-4">{{fs.company_name}}</h5>
-                <p class="mb-4">{{fs.description}}</p>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>{{fs.location}}</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>{{fs.email_id}}</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+{{fs.contact_number}}</p>
-            </div>
-            <div class="col-lg-8 col-md-12">
-                <div class="row">
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">Help</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Careers</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Returns & Cenceliation</a>
-                            <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>FAQ</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">My Account</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Order List</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Favourite</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Rewards</a>
-                            <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Gift Cards</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">Newsletter</h5>
-                        <p>{{fs.warning_message}}</p>
-                        <form action="">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Your Email Address">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary">Sign Up</button>
-                                </div>
-                            </div>
-                        </form>
-                        <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
-                        <div class="d-flex">
-                            <a class="btn btn-primary btn-square mr-2" href="{{fs.twitter_link}}"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="{{fs.facebook_link}}"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="{{fs.linkedln_link}}"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-primary btn-square" href="{{fs.instagram_link}}"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-        <div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
-            <div class="col-md-6 px-xl-0">
-                <p class="mb-md-0 text-center text-md-left text-secondary">
-                    &copy; <a class="text-primary" href="#">Domain</a>. All Rights Reserved. Designed
-                    by
-                    <a class="text-primary" href="https://htmlcodex.com">HTML Codex</a>
-                </p>
-            </div>
-            <div class="col-md-6 px-xl-0 text-center text-md-right">
-                <img class="img-fluid" src="{% static 'img/payments.png' %}" alt="">
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
+    {% endblock home %}
 
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqBootstrapValidation/1.3.7/jqBootstrapValidation.min.js" integrity="sha512-JHVzEjx3zsh0SY+F9jc0VlW7VBXeDIJNXR0xcYySu1QLhf+Du8Zx9p28zP5MjIW7onsVy0qMsVls0YO6GTg2Aw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <script src="mail/contact.js"></script>
-    <script src="{% static 'mail/contact.js' %}"></script>
-
-    <!-- Template Javascript -->
-    <script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>

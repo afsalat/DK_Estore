@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import category,featured_product,leatest_product,footer_details
+from .models import category, featured_product, leatest_product, footer_details
 
 # Create your views here.
 
@@ -20,3 +20,15 @@ def entry(request):
         'l_pro':leatest_pro,
         'lxl':footer_detail
         })
+
+def featured_detail(request, id):
+        
+    respo =  featured_product.objects.get(id=id)
+
+    return render(request, 'detail.html',{'res':respo})
+
+def leatest_detail(request, id):
+        
+    respo =  leatest_product.objects.get(id=id)
+
+    return render(request, 'detail.html',{'res':respo})

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponse
 from home import models as mo
 from .models import all_pro_list
 
@@ -11,4 +11,23 @@ def product_list(request):
     f_pro = mo.featured_product.objects.all()
     l_pro = mo.leatest_product.objects.all()
 
+
     return render(request, 'product_list.html', {'tt1':f_pro,'tt2':l_pro,'ap':all_pro})
+
+def product_detail(request, id):
+
+    respo =  all_pro_list.objects.get(id=id)
+
+    return render(request, 'detail.html',{'res':respo})
+
+def f_detail(request, id):
+
+    respo = mo.featured_product.objects.get(id=id)
+
+    return render(request, 'detail.html',{'res':respo})
+
+def l_detail(request, id):
+
+    respo =  mo.leatest_product.objects.get(id=id)
+
+    return render(request, 'detail.html',{'res':respo})

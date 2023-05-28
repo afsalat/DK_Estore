@@ -12,7 +12,7 @@ class category(models.Model):
 
     class Meta:
         verbose_name = ("category")
-        verbose_name_plural = ("categorys")
+        verbose_name_plural = ("categories")
 
     def __str__(self):
         return self.cate_name
@@ -31,11 +31,14 @@ class featured_product(models.Model):
     pro_desc = models.TextField()
     pro_cate = models.ForeignKey(category, on_delete=models.CASCADE, null=True)
     pro_img = models.ImageField(upload_to='featured_products',null=True)
-    price = models.IntegerField(null=True)
+    pro_sizes = models.IntegerField(null=True)
+    pro_colors = models.CharField(max_length=150,null=True)
+    pro_price = models.IntegerField(null=True)
+    pro_stock = models.IntegerField(null=True)
 
     class Meta:
         verbose_name = ("featured_product")
-        verbose_name_plural = ("featured_products")
+        verbose_name_plural = ("featured_products   ( max 12 items )")
 
     def __str__(self):
         return self.pro_name
@@ -52,11 +55,14 @@ class leatest_product(models.Model):
     pro_desc = models.TextField()
     pro_cate = models.ForeignKey(category, on_delete=models.CASCADE, null=True)
     pro_img = models.ImageField(upload_to='leatest_products', null=True)
-    price = models.IntegerField()
+    pro_sizes = models.IntegerField(null=True)
+    pro_colors = models.CharField(max_length=150,null=True)
+    pro_price = models.IntegerField(null=True)
+    pro_stock = models.IntegerField(null=True)
 
     class Meta:
         verbose_name = ("leatest_products")
-        verbose_name_plural = ("leatest_products")
+        verbose_name_plural = ("leatest_products  ( max 12 items )")
 
     def __str__(self):
         return self.pro_name

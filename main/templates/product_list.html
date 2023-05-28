@@ -239,12 +239,12 @@
                             </div>
                         </div>
                     </div>
-                    {% for pt in ap %}
+                    {% for ptt in ap %}
                     <a href="">
                     <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
                         <div class="product-item bg-light mb-4">
                             <div class="product-img position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="{{pt.pro_img.url}}" alt="">
+                                <img class="img-fluid w-100" src="{{ptt.pro_img.url}}" alt="">
                                 <div class="product-action">
                                     <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                                     <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -253,9 +253,9 @@
                                 </div>
                             </div>
                             <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="pro_detail/{{pt.id}}">{{pt.pro_name}}</a>
+                                <a class="h6 text-decoration-none text-truncate" href="pro_detail/{{ptt.id}}">{{ptt.pro_name}}</a>
                                 <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>{{pt.pro_price}}</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                                    <h5>${{ptt.pro_price}}</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-center mb-1">
                                     <small class="fa fa-star text-primary mr-1"></small>
@@ -263,7 +263,7 @@
                                     <small class="fa fa-star text-primary mr-1"></small>
                                     <small class="fa fa-star text-primary mr-1"></small>
                                     <small class="fa fa-star text-primary mr-1"></small>
-                                    <small>({{size}})</small>
+                                    <small>({{ptt.pro_size}})</small>
                                 </div>
                             </div>
                         </div>
@@ -284,7 +284,7 @@
                             <div class="text-center py-4">
                                 <a class="h6 text-decoration-none text-truncate" href="l_detail/{{pt.id}}">{{pt.pro_name}}</a>
                                 <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>{{pt.price}}</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                                    <h5>${{pt.pro_price}}</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-center mb-1">
                                     <small class="fa fa-star text-primary mr-1"></small>
@@ -292,7 +292,7 @@
                                     <small class="fa fa-star text-primary mr-1"></small>
                                     <small class="fa fa-star text-primary mr-1"></small>
                                     <small class="fa fa-star text-primary mr-1"></small>
-                                    <small>(99)</small>
+                                    <small>({{pt.pro_sizes}})</small>
                                 </div>
                             </div>
                         </div>
@@ -313,7 +313,7 @@
                             <div class="text-center py-4">
                                 <a class="h6 text-decoration-none text-truncate" href="f_detail/{{p.id}}">{{p.pro_name}}</a>
                                 <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>{{p.price}}</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                                    <h5>${{p.pro_price}}</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-center mb-1">
                                     <small class="fa fa-star text-primary mr-1"></small>
@@ -321,7 +321,7 @@
                                     <small class="fa fa-star text-primary mr-1"></small>
                                     <small class="fa fa-star text-primary mr-1"></small>
                                     <small class="fa fa-star text-primary mr-1"></small>
-                                    <small>(99)</small>
+                                    <small>({{p.pro_sizes}})</small>
                                 </div>
                             </div>
                         </div>

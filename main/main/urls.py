@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('home.urls')),
     path('more_products/',include('product_list.urls')),
+    path('sign-up-in/',include('sign_in_up.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

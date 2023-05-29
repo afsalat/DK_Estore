@@ -1,4 +1,6 @@
 {% load static %}
+
+{% block sign %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,6 +25,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
+
 </head>
 <body>
      <!-- Topbar Start -->
@@ -41,8 +44,8 @@
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">Sign in</button>
-                            <button class="dropdown-item" type="button">Sign up</button>
+                            <a href="sign-up-in"><button class="dropdown-item" type="button">Sign In/Up</button></a>
+                            <button class="dropdown-item" type="button">View profile</button>
                         </div>
                     </div>
                     <div class="btn-group mx-2">
@@ -206,5 +209,11 @@
     <!-- Template Javascript -->
     <script src="{% static 'js/main.js' %}"></script>
 
+    <!-- sig -->
+    <script src="{% static 'js/sign.js' %}"></script>
+
+
+
 </body>
 </html>
+{% endblock sign %}

@@ -36,7 +36,7 @@
           <input type="email" placeholder="Email" name="email" />
           <input type="password" placeholder="Password" name="password"/>
           <input type="password" placeholder="Password" name="repassword"/>
-          <a style="text-decoration: none;" href="/"><button type="submit" >Sign Up</button></a>
+          <a href="logged/"><button type="submit" class="btn12"> Sign Up</button></a>
         </form>
       </div>
       <div class="form-container sign-in-container">
@@ -51,7 +51,7 @@
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
           <a href="#">Forgot your password?</a>
-          <button>Sign In</button>
+          <button type="button" onclick="qbth()">Sign In</button>
         </form>
       </div>
       <div class="overlay-container">
@@ -72,7 +72,7 @@
       </div>
     </div>
 
-    <footer>
+    <!-- <footer>
       <p>
         Created with <i class="fa fa-heart"></i> by
         <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
@@ -83,10 +83,16 @@
           >here</a
         >.
       </p>
-    </footer>
+    </footer> -->
     
   <!-- signIn signUp js File --> 
    <script src="{% static 'js/sign.js' %}"></script>
+   <script>
+    function qbth(params) {
+      
+      location.replace('http://127.0.0.1:8000/');
+    }
+   </script>
   </body>
 </html>
     {% endblock sign %}

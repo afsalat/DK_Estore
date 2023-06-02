@@ -42,11 +42,26 @@
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
+                        {% comment %} {% if acn %} {% endcomment %}
+                        {% comment %} {% for c in acn %} {% endcomment %}
+                        {% comment %} <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">{{c.username}}</button> {% endcomment %}
+                        {% comment %} {% endfor %} {% endcomment %}
+                        {% comment %} {% else %} {% endcomment %}
+                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My account</button>
+                        {% comment %} {% endif %} {% endcomment %}
+                        {% if id %}
+                        {% for auth in id %}
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="sign-up-in"><button class="dropdown-item" type="button">Sign In/Up</button></a>
-                            <button class="dropdown-item" type="button">View profile</button>
+                            <a style="text-decoration: none;" href="logged/"><button class="dropdown-item" type="button">Hi {{auth.username}}</button></a>
+                            <button class="dropdown-item" type="button">Logout</button>
                         </div>
+                        {% endfor %}
+                        {% else %}
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a style="text-decoration: none;" href="logged/"><button class="dropdown-item" type="button">Login</button></a>
+                            <button class="dropdown-item" type="button">Logout</button>
+                        </div>
+                        {% endif %}
                     </div>
                     <div class="btn-group mx-2">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">USD</button>

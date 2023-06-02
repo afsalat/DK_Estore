@@ -44,9 +44,20 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
+                            {% if id %}
+                            <a href="logged/{{id.id}}" class="nav-item nav-link">Home</a>
+                            {% else %}
                             <a href="/" class="nav-item nav-link">Home</a>
-                            <a href="" class="nav-item nav-link active">Shop</a>
-                            <a href="" class="nav-item nav-link">Product Detail</a>
+                            {% endif %}
+
+                            {% if id %}
+                            <a href="logged/" class="nav-item nav-link active">Shop</a>
+                            {% else %}
+                            <a href="/" class="nav-item nav-link active">Shop</a>
+                            {% endif %}
+
+                            <a class="nav-item nav-link">Product Detail</a>
+                            
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
@@ -78,8 +89,19 @@
         <div class="row px-xl-5">
             <div class="col-12">
                 <nav class="breadcrumb bg-light mb-30">
+
+                    {% if id %}
+                    <a class="breadcrumb-item text-dark" href="logged/">Home</a>
+                    {% else %}
                     <a class="breadcrumb-item text-dark" href="/">Home</a>
-                    <a class="breadcrumb-item text-dark" href="">Shop</a>
+                    {% endif %}
+
+                    {% if id %}
+                    <a class="breadcrumb-item text-dark" href="logged/">Shop</a>
+                    {% else %}
+                    <a class="breadcrumb-item text-dark" href="/">Shop</a>
+                    {% endif %}
+
                     <span class="breadcrumb-item active">Shop List</span>
                 </nav>
             </div>
@@ -253,7 +275,11 @@
                                 </div>
                             </div>
                             <div class="text-center py-4">
+                                {% if id %}
+                                <a class="h6 text-decoration-none text-truncate" href="logged/pro_detail/{{ptt.id}}">{{ptt.pro_name}}</a>
+                                {% else %}
                                 <a class="h6 text-decoration-none text-truncate" href="pro_detail/{{ptt.id}}">{{ptt.pro_name}}</a>
+                                {% endif %}
                                 <div class="d-flex align-items-center justify-content-center mt-2">
                                     <h5>${{ptt.pro_price}}</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                                 </div>
@@ -282,8 +308,12 @@
                                 </div>
                             </div>
                             <div class="text-center py-4">
+                                {% if id %}
+                                <a class="h6 text-decoration-none text-truncate" href="logged/l_detail/{{pt.id}}">{{pt.pro_name}}</a>
+                                {% else %}
                                 <a class="h6 text-decoration-none text-truncate" href="l_detail/{{pt.id}}">{{pt.pro_name}}</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
+                                {% endif %}               
+                                 <div class="d-flex align-items-center justify-content-center mt-2">
                                     <h5>${{pt.pro_price}}</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-center mb-1">
@@ -311,7 +341,11 @@
                                 </div>
                             </div>
                             <div class="text-center py-4">
+                                {% if id %}
+                                <a class="h6 text-decoration-none text-truncate" href="logged/f_detail/{{p.id}}">{{p.pro_name}}</a>
+                                {% else %}
                                 <a class="h6 text-decoration-none text-truncate" href="f_detail/{{p.id}}">{{p.pro_name}}</a>
+                                {% endif %}                                
                                 <div class="d-flex align-items-center justify-content-center mt-2">
                                     <h5>${{p.pro_price}}</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                                 </div>

@@ -9,3 +9,8 @@ signUpButton.addEventListener('click', () => {
 signInButton.addEventListener('click', () => {
 	container.classList.remove("right-panel-active");
 });
+
+
+function signclose(params) {
+	window.location = "http://127.0.0.1:8000/";
+}

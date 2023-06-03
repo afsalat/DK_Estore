@@ -65,15 +65,19 @@ def leatest_detail(request, id):
 def registeration(request):
 
     if request.method == "POST":
-        user_name = request.POST['username']
-        email__id = request.POST['email']
-        pass_word = request.POST['password']
+        username = request.POST['username']
+        email_id = request.POST['email']
+        password = request.POST['password']
         # re_password = request.POST['repassword']
-        statuss = "logged"
-        customer = register.objects.create(username=user_name,email_id=email__id,password=pass_word,status=statuss)
+        status = "logged"
+        customer = register.objects.create(username=username,email_id=email_id,password=password,status=status)
         customer.save()
 
-        idd = register.objects.filter(username=user_name)
+        idd = register.objects.filter(username=username)
+
+        for i in idd:
+            id=i.id
+            name=i.username
         
         cat_list = category.objects.all()
         
@@ -88,7 +92,8 @@ def registeration(request):
             'f_pro':featured_pro,
             'l_pro':leatest_pro,
             'lxl':footer_detail,
-            'id':idd,
+            'id':id,
+            'uname':name,
             })
 
         

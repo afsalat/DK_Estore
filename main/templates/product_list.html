@@ -44,14 +44,16 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            {% if id %}
-                            <a href="logged/{{id.id}}" class="nav-item nav-link">Home</a>
+                            {% if id_ %}
+                            {% for i in id_ %}{% endfor %}
+                            <a href="logged/{{i.id}}" class="nav-item nav-link">Home</a>
                             {% else %}
                             <a href="/" class="nav-item nav-link">Home</a>
                             {% endif %}
 
-                            {% if id %}
-                            <a href="logged/" class="nav-item nav-link active">Shop</a>
+                            {% if id_ %}
+                            {% for i in id_ %}{% endfor %}
+                            <a href="logged/{{i.id}}" class="nav-item nav-link active">Shop</a>
                             {% else %}
                             <a href="/" class="nav-item nav-link active">Shop</a>
                             {% endif %}

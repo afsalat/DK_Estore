@@ -24,11 +24,8 @@ def product_list_log(request, id):
 
     id_ = mo.register.objects.get(id=id)
 
-    for i in id_:
-        iid=i
 
-
-    return render(request, 'product_list.html', {'tt1':f_pro,'tt2':l_pro,'ap':all_pro,'id':iid})
+    return render(request, 'product_list.html', {'tt1':f_pro,'tt2':l_pro,'ap':all_pro,'id':id_})
 
 
 def product_detail(request, id):

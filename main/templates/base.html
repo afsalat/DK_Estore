@@ -49,13 +49,11 @@
                         {% comment %} {% else %} {% endcomment %}
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My account</button>
                         {% comment %} {% endif %} {% endcomment %}
-                        {% if id %}
-                        {% for auth in id %}
+                        {% if name %}
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a style="text-decoration: none;" href="logged/"><button class="dropdown-item" type="button">Hi {{auth.username}}</button></a>
+                            <a style="text-decoration: none;" href="logged/"><button class="dropdown-item" type="button">Hi {{name}}</button></a>
                             <button class="dropdown-item" type="button">Logout</button>
                         </div>
-                        {% endfor %}
                         {% else %}
                         <div class="dropdown-menu dropdown-menu-right">
                             <a style="text-decoration: none;" href="logged/"><button class="dropdown-item" type="button">Login</button></a>

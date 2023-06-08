@@ -3,11 +3,11 @@ from . import views
 
 urlpatterns = [
 
-    path('', views.product_list, name="pro_li"),
-    path('logged/<int:id>', views.product_list_log, name="pro_li_log"),
+    # path('', views.product_list, name="pro_li"),
+    path('<str:uname>', views.product_list_log, name="pro_li_log"),
 
-    path('pro_detail/<int:id>', views.product_detail, name='pro_detail'),
-    path('logged/pro_detail/<int:id>', views.product_detail, name='logged_pro_detail'),
+    path('/pro_detail/<int:id>', views.product_detail, name='pro_detail'),
+    path('pro_detail/<int:id><str:uname>', views.product_detail, name='logged_pro_detail'),
 
     path('f_detail/<int:id>', views.f_detail, name='f_detail'),
     path('logged/f_detail/<int:id>', views.f_detail, name='logged_f_detail'),

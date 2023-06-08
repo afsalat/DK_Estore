@@ -55,17 +55,17 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            {% if id %}
-                            <a href="/{{id.id}}" class="nav-item nav-link active">Home</a>
+                            {% if uname %}
+                            <a href="/{{uname}}" class="nav-item nav-link active">Home</a>
                             {% else %}
                             <a href="/" class="nav-item nav-link active">Home</a>
                             {% endif %}
 
 
-                            {% if id %}
-                            <a href="/more_products/{{id}}" class="nav-item nav-link">Shop</a>
+                            {% if uname %}
+                            <a href="more_products/{{uname}}" class="nav-item nav-link">Shop</a>
                             {% else %}
-                            <a href="more_products/" class="nav-item nav-link">Shop</a>
+                            <a href="more_producthhs/" class="nav-item nav-link active">Shop</a>
                             {% endif %}
                             
                             <a href="" class="nav-item nav-link">Product Detail</a>

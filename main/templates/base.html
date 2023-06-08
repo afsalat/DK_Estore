@@ -49,9 +49,9 @@
                         {% comment %} {% else %} {% endcomment %}
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My account</button>
                         {% comment %} {% endif %} {% endcomment %}
-                        {% if name %}
+                        {% if uname %}
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a style="text-decoration: none;" href="logged/"><button class="dropdown-item" type="button">Hi {{name}}</button></a>
+                            <a style="text-decoration: none;" href="logged/"><button class="dropdown-item" type="button">Hi {{uname}}</button></a>
                             <button class="dropdown-item" type="button">Logout</button>
                         </div>
                         {% else %}

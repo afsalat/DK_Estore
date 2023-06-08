@@ -22,7 +22,7 @@ def entry(request):
         })
 
 
-def entry_auth(request, id):
+def entry_auth(request, uname):
 
     cat_list = category.objects.all()
 
@@ -32,8 +32,7 @@ def entry_auth(request, id):
 
     footer_detail = footer_details.objects.all()
 
-    # if id:
-    #     vk = register.objects.get(id=id)
+    vk = register.objects.filter(username=uname)
 
  
     return render(request, 'index.html',{
@@ -41,7 +40,7 @@ def entry_auth(request, id):
         'f_pro':featured_pro,
         'l_pro':leatest_pro,
         'lxl':footer_detail,
-        # 'acn':acc_name,
+        'uname':vk,
         })
 
 

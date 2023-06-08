@@ -44,9 +44,21 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="/" class="nav-item nav-link">Home</a>
-                            <a href="/more_products" class="nav-item nav-link">Shop</a>
-                            <a href="" class="nav-item nav-link active">Product Detail</a>
+                            
+                    {% if uname %}
+                    <a href="/logged/{{uname}}" class="nav-item nav-link">Home</a>
+                    {% else %}
+                    <a href="/" class="nav-item nav-link">Home</a>
+                    {% endif %}
+                    
+                    {% if uname %}
+                    <a href="/logged/more_products_log/{{uname}}" class="nav-item nav-link">Shop</a>
+                    {% else %}
+                    <a href="/more_products" class="nav-item nav-link">Shop</a>
+                    {% endif %}
+
+                    <a href="" class="nav-item nav-link active">Product Detail</a>
+
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
@@ -79,8 +91,20 @@
         <div class="row px-xl-5">
             <div class="col-12">
                 <nav class="breadcrumb bg-light mb-30">
+
+                    {% if uname %}
+                    <a class="breadcrumb-item text-dark" href="/logged/{{uname}}">Home</a>
+                    {% else %}
                     <a class="breadcrumb-item text-dark" href="/">Home</a>
+                    {% endif %}
+
+                    {% if uname %}
+                    <a class="breadcrumb-item text-dark" href="/logged/more_products_log/{{uname}}">Shop</a>
+                    {% else %}
                     <a class="breadcrumb-item text-dark" href="/more_products">Shop</a>
+                    {% endif %}
+
+
                     <span class="breadcrumb-item active">product Detail</span>
                 </nav>
             </div>

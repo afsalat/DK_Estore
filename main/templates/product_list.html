@@ -90,16 +90,16 @@
             <div class="col-12">
                 <nav class="breadcrumb bg-light mb-30">
 
-                    {% if id %}
-                    <a class="breadcrumb-item text-dark" href="logged/">Home</a>
+                    {% if uname %}
+                    <a class="breadcrumb-item text-dark" href="logged/{{uname}}">Home</a>
                     {% else %}
                     <a class="breadcrumb-item text-dark" href="/">Home</a>
                     {% endif %}
 
-                    {% if id %}
-                    <a class="breadcrumb-item text-dark" href="logged/">Shop</a>
+                    {% if uname %}
+                    <a class="breadcrumb-item text-dark" href="logged/more_products_log/{{uname}}">Shop</a>
                     {% else %}
-                    <a class="breadcrumb-item text-dark" href="/">Shop</a>
+                    <a class="breadcrumb-item text-dark" href="more_products/">Shop</a>
                     {% endif %}
 
                     <span class="breadcrumb-item active">Shop List</span>

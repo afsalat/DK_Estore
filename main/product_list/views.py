@@ -30,7 +30,13 @@ def product_list_log(request, uname):
     return render(request, 'product_list.html', {'tt1':f_pro,'tt2':l_pro,'ap':all_pro,'uname':uname})
 
 
-def product_detail(request, id, uname):
+def product_detail(request, id):
+
+    respo =  all_pro_list.objects.get(id=id)
+
+    return render(request, 'detail.html',{'res':respo})
+
+def log_product_detail(request, id, uname):
 
     respo =  all_pro_list.objects.get(id=id)
 

@@ -236,7 +236,11 @@
                         </div>
                     </div>
                     <div class="text-center py-4">
+                        {% if uname %}
+                        <a class="h6 text-decoration-none text-truncate" href="log_featured_detail/{{pt.id}}{{uname}}">{{pt.pro_name}}</a>
+                        {% else %}
                         <a class="h6 text-decoration-none text-truncate" href="featured_detail/{{pt.id}}">{{pt.pro_name}}</a>
+                        {% endif %}
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h5>${{pt.pro_price}}</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -302,7 +306,11 @@
                         </div>
                     </div>
                     <div class="text-center py-4">
+                        {% if uname %}
+                        <a class="h6 text-decoration-none text-truncate" href="log_leatest_detail/{{p.id}}{{uname}}">{{p.pro_name}}</a>
+                        {% else %}
                         <a class="h6 text-decoration-none text-truncate" href="leatest_detail/{{p.id}}">{{p.pro_name}}</a>
+                        {% endif %}
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h5>${{p.pro_price}}</h5><h6 class="text-muted ml-2"><del>$145.00</del></h6>
                         </div>

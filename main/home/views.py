@@ -54,6 +54,12 @@ def featured_detail(request, id):
 
     return render(request, 'detail.html',{'res':respo})
 
+def log_featured_detail(request, id, uname):
+        
+    respo =  featured_product.objects.get(id=id)
+
+    return render(request, 'detail.html',{'res':respo,'uname':uname})
+
 
 
 def leatest_detail(request, id):
@@ -61,6 +67,12 @@ def leatest_detail(request, id):
     respo =  leatest_product.objects.get(id=id)
 
     return render(request, 'detail.html',{'res':respo})
+
+def log_leatest_detail(request, id, uname):
+        
+    respo =  leatest_product.objects.get(id=id)
+
+    return render(request, 'detail.html',{'res':respo,'uname':uname})
 
 
 

@@ -31,8 +31,11 @@ def entry_auth(request, uname):
     leatest_pro = leatest_product.objects.all()
 
     footer_detail = footer_details.objects.all()
-
-    vk = register.objects.filter(username=uname)
+    
+    if uname:
+        vk = uname
+    else:
+        vk = register.objects.filter(username=uname)
 
  
     return render(request, 'index.html',{

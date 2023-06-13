@@ -12,6 +12,7 @@ class all_pro_list(models.Model):
     pro_colors = models.CharField(max_length=150)
     pro_price = models.IntegerField()
     pro_stock = models.IntegerField()
+    pro_slug = models.SlugField(null=True)
 
     def __str__(self):
         return self.pro_name

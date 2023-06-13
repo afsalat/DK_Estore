@@ -39,7 +39,7 @@ def product_detail(request, id):
 
 def log_product_detail(request, id, uname):
 
-    respo =  all_pro_list.objects.filter(id=id)
+    respo =  all_pro_list.objects.get(id=id)
 
     return render(request, 'detail.html',{'res':respo,'uname':uname})
 
@@ -53,7 +53,7 @@ def f_detail(request, id):
 
 def log_f_detail(request, id, uname):
 
-    respo = mo.featured_product.objects.filter(id=id)
+    respo = mo.featured_product.objects.get(id=id)
 
     return render(request, 'detail.html',{'res':respo,'uname':uname})
 
@@ -67,6 +67,6 @@ def l_detail(request, id):
 
 def log_l_detail(request, id, uname):
 
-    respo =  mo.leatest_product.objects.filter(id=id)
+    respo =  mo.leatest_product.objects.get(id=id)
 
     return render(request, 'detail.html',{'res':respo,'uname':uname})

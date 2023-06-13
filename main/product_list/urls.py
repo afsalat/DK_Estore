@@ -10,12 +10,12 @@ urlpatterns = [
 
     # unknowning users
     path('pro_detail/<int:id>', views.product_detail, name='pro_detail'),
-    path('logged/f_detail/<int:id>', views.f_detail, name='logged_f_detail'),
-    path('logged/l_detail/<int:id>', views.l_detail, name='logged_l_detail'),
+    path('f_detail/<int:id>', views.f_detail, name='logged_f_detail'),
+    path('l_detail/<int:id>', views.l_detail, name='logged_l_detail'),
 
     # sign-up or sign-in users
-    path('pro_detail/<int:id><str:uname>', views.log_product_detail, name='logged_pro_detail'),
-    path('f_detail/<int:id>', views.f_detail, name='f_detail'),
-    path('l_detail/<int:id>', views.l_detail, name='l_detail'),
+    path('log_pro_detail/<int:id><str:uname>', views.log_product_detail, name='logged_pro_detail'),
+    path('log_f_detail/<int:id><str:uname>', views.log_f_detail, name='f_detail'),
+    path('log_l_detail/<int:id><str:uname>', views.log_l_detail, name='l_detail'),
 
 ]

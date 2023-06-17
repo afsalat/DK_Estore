@@ -120,14 +120,16 @@ def registeration(request):
                     password = request.POST['lpassword']
                     
                     if register.objects.filter(email_id=email_i_d) and register.objects.filter(password=password):
-                        # status = 'logged'
-                        # mer = register.objects.all()
-                        # for cust in mer:
-                        #     customers = cust.email_i_d
-                        # customers.update(status=status)    
-                        # customers.save()
                         
-                        n = register.objects.filter(email_id=email_id)
+                        mr = register.objects.filter(email_id=email_i_d)
+                        for i in mr:
+                            idd = i.id
+
+                        mer = register.objects.get(id=idd)
+                        mer.status = "logged"
+                        mer.save()
+                        
+                        n = register.objects.filter(email_id=email_i_d)
                         
                         for i in n:
                             name = i.username

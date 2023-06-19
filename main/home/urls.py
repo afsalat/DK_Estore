@@ -12,5 +12,6 @@ urlpatterns = [
     path('logged/log_leatest_detail/<int:id><str:uname>', views.log_leatest_detail, name='logged_leatest_detail'),
 
     path('logged/', views.registeration, name="logged"),
+    path('re-log/<str:wr>', views.re_registration, name="log_error"),
 
 ]

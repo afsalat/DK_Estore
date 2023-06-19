@@ -14,6 +14,8 @@ def entry(request):
     footer_detail = footer_details.objects.all()
 
     
+
+    
     return render(request, 'index.html',{
         'cate':cat_list,
         'f_pro':featured_pro,
@@ -86,7 +88,6 @@ def registeration(request):
         
     footer_deta = footer_details.objects.all()
 
-    # if request.method == "POST":
     
     try:
         if request.method=='POST':
@@ -94,25 +95,36 @@ def registeration(request):
                 username = request.POST['username']
                 email_id = request.POST['email']
                 password = request.POST['password']
-                # re_password = request.POST['repassword']
-                status = "logged"
-                customer = register.objects.create(username=username,email_id=email_id,password=password,status=status)
-                customer.save()
-                
-                idd = register.objects.filter(username=username)
-                
-                for i in idd:
-                    id = i.id
-                    name=i.username
+                re_password = request.POST['repassword']
+
+                if password == re_password:
                     
-                return render(request,'index.html',{
-                    'cate':cat_li,
-                    'f_pro':featured_p,
-                    'l_pro':leatest_p,
-                    'lxl':footer_deta,
-                    'id':id,
-                    'uname':name
-                    })
+                    status = "logged"
+                    customer = register.objects.create(username=username,email_id=email_id,password=password,status=status)
+                    customer.save()
+                    
+                    idd = register.objects.filter(username=username)
+                
+                    for i in idd:
+                        id = i.id
+                        name=i.username
+                        
+                    return render(request,'index.html',{
+                        'cate':cat_li,
+                        'f_pro':featured_p,
+                        'l_pro':leatest_p,
+                        'lxl':footer_deta,
+                        'id':id,
+                        'uname':name
+                        })
+                else:
+                    wr = """
+                    """
+                    return render(request, 'sign-up_in.html', {'wr':wr})
+
+                                
+
+                
     except:
             if request.method=='POST':
                 if request.POST['lemail']:
@@ -145,3 +157,8 @@ def registeration(request):
             
         
     return render(request, 'sign-up_in.html')
+
+
+def re_registration(request, wr):
+
+    return render(request, 'sign-up_in.html', {'wr':wr})

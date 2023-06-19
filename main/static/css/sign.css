@@ -252,6 +252,18 @@ input {
 	width: 40px;
 }
 
+.er {
+	background-color: #ffb2aa;
+    width: 100vh;
+    margin-top: 10px;
+    text-align: center;
+    border: red;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-weight: normal;
+    border-radius: 9px;
+}
+
 footer {
     background-color: #222;
     color: #fff;

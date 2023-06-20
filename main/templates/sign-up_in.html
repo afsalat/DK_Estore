@@ -39,10 +39,6 @@
           <a href="logged/"><button type="submit" class="btn12"> Sign Up</button></a>
         </form>
       </div>
-      {% if wr %}
-      {{wr}}
-      {% else %}
-      {% endif %}
       <div class="form-container sign-in-container">
         <form action="" method="POST">
           {% csrf_token %}
@@ -79,7 +75,9 @@
     
     <!-- errors -->
 
-    <div class="er"> mple element with utilities </div>
+    {% if wr %}
+    <div class="{{wr.class}}"> {{wr.message}} </div>
+    {% endif %}
 
 
     <!-- <footer>

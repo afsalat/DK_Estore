@@ -1,3 +1,11 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def cart_list(request):
+    
+    return render(request, 'cart.html')
+
+def log_cart_list(request, uname):
+    
+
+    return render(request, 'cart.html',{'uname':uname})

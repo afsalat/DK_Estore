@@ -1,5 +1,5 @@
 from django.db import models
-from main.home.models import category
+from home import models as mok
 
 
 
@@ -8,7 +8,7 @@ class cart(models.Model):
 
     pro_name = models.CharField(max_length=150)
     pro_desc = models.TextField()
-    pro_cate = models.ForeignKey(category, on_delete=models.CASCADE, null=True)
+    pro_cate = models.ForeignKey(mok.category, on_delete=models.CASCADE, null=True)
     pro_img = models.ImageField(upload_to='leatest_products', null=True)
     pro_sizes = models.IntegerField(null=True)
     pro_colors = models.CharField(max_length=150,null=True)

@@ -6,7 +6,7 @@ urlpatterns = [
     # main common 
     path('', views.product_list, name="pro_li"),
     path('<str:uname>', views.product_list_log, name="pro_li_log"),
-    path('logged/more_products/<str:uname>', views.product_list_log, name="pro_li_log"),
+    # path('logged/more_products/<str:uname>', views.product_list_log, name="pro_li_log"),
 
     # unknowning users
     path('pro_detail/<int:id>', views.product_detail, name='pro_detail'),

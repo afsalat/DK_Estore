@@ -14,7 +14,7 @@ class cart(models.Model):
     pro_colors = models.CharField(max_length=150,null=True)
     pro_price = models.IntegerField(null=True)
     pro_stock = models.IntegerField(null=True)
-    # person_id = 
+    person_id = models.CharField(null=True,max_length=150)
     
 # class order_details(models.Model):
 #     first_name = models.CharField(max_length=150)

@@ -56,11 +56,11 @@
                             <a href="/more_products/" class="nav-item nav-link">Shop</a>
                             {% endif %}
 
-                            <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
+                            <a href="" class="nav-item nav-link">Shop Detail</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="cart/" class="dropdown-item active">Shopping Cart</a>
+                                    <a href="" class="dropdown-item active">Shopping Cart</a>
                                     <a href="checkout.html" class="dropdown-item">Checkout</a>
                                 </div>
                             </div>
@@ -89,9 +89,20 @@
         <div class="row px-xl-5">
             <div class="col-12">
                 <nav class="breadcrumb bg-light mb-30">
-                    <a class="breadcrumb-item text-dark" href="#">Home</a>
-                    <a class="breadcrumb-item text-dark" href="#">Shop</a>
-                    <span class="breadcrumb-item active">Shopping Cart</span>
+
+                    {% if uname %}
+                    <a class="breadcrumb-item text-dark" href="/logged/{{uname}}">Home</a>
+                    {% else %}
+                    <a class="breadcrumb-item text-dark" href="/">Home</a>
+                    {% endif %}
+
+                    {% if uname %}
+                    <a class="breadcrumb-item text-dark" href="/logged/more_products_log/{{uname}}">Shop</a>
+                    {% else %}
+                    <a class="breadcrumb-item text-dark" href="/more_products_log/">Shop</a>                    
+                    {% endif %}
+
+                    <span class="breadcrumb-item active">Shop List</span>
                 </nav>
             </div>
         </div>
@@ -116,9 +127,10 @@
                     <tbody class="align-middle">
 
 
+                        {% for i in pr %}
                         <tr>
-                            <td class="align-middle"><img src="img/product-1.jpg" alt="" style="width: 50px;"> Product Name</td>
-                            <td class="align-middle">$150</td>
+                            <td class="align-middle"><img src="{{i.pro_img}}" alt="" style="width: 50px;"> {{i.pro_name}}</td>
+                            <td class="align-middle">${{i.pro_price}}</td>
                             <td class="align-middle">
                                 <div class="input-group quantity mx-auto" style="width: 100px;">
                                     <div class="input-group-btn">
@@ -137,6 +149,7 @@
                             <td class="align-middle">$150</td>
                             <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
                         </tr>
+                        {% endfor %}
 
 
                     </tbody>

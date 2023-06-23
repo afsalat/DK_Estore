@@ -27,6 +27,8 @@ class category(models.Model):
 
 class featured_product(models.Model):
 
+    types = (('ft','featured'),)
+
     pro_name = models.CharField(max_length=50)
     pro_desc = models.TextField()
     pro_cate = models.ForeignKey(category, on_delete=models.CASCADE, null=True)
@@ -35,6 +37,7 @@ class featured_product(models.Model):
     pro_colors = models.CharField(max_length=150,null=True)
     pro_price = models.IntegerField(null=True)
     pro_stock = models.IntegerField(null=True)
+    pro_type = models.CharField(max_length=50, choices=types, default=types, null=True)
 
     class Meta:
         verbose_name = ("featured_product")
@@ -51,6 +54,8 @@ class featured_product(models.Model):
 
 class leatest_product(models.Model):
 
+    types = (('lt','leatest'),)
+
     pro_name = models.CharField(max_length=150)
     pro_desc = models.TextField()
     pro_cate = models.ForeignKey(category, on_delete=models.CASCADE, null=True)
@@ -59,6 +64,7 @@ class leatest_product(models.Model):
     pro_colors = models.CharField(max_length=150,null=True)
     pro_price = models.IntegerField(null=True)
     pro_stock = models.IntegerField(null=True)
+    pro_type = models.CharField(max_length=50, choices=types, default='lt',null=True)
 
     class Meta:
         verbose_name = ("leatest_products")

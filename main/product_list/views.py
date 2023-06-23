@@ -48,43 +48,6 @@ def log_product_detail(request, id, uname):
     return render(request, 'detail.html',{'res':respo,'id':id,'uname':uname})
 
 
-def add_to_cart(request, id, uname):
-
-    try:
-
-        pro = all_pro_list.objects.filter(id=id)
-
-
-        for i in pro:
-            pro_name = i.pro_name
-            pro_desc = i.pro_desc
-            pro_cate = i.pro_cate
-            pro_img = i.pro_img
-            pro_sizes = i.pro_sizes
-            pro_colors = i.pro_colors
-            pro_price = i.pro_price
-            pro_stock = i.pro_stock
-            
-            
-        ms =  user.cart.objects.create(
-            pro_name=pro_name,
-            pro_desc=pro_desc,
-            pro_cate=pro_cate,
-            pro_img=pro_img,
-            pro_sizes=pro_sizes,
-            pro_colors=pro_colors,
-            pro_price=pro_price,
-            pro_stock=pro_stock,
-            person_id=uname
-            )
-        
-        ms.save()
-
-        
-    except:
-        print("GGGGGGGGGGGGGGGGGGGGGGG")
-        
-    return render(request, 'cart.html',{'id':id,'uname':uname})
 # ------------------------------
 
 

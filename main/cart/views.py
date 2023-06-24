@@ -54,5 +54,20 @@ def add_to_cart(request, types, id, uname):
         )
     
     ms.save()
+
+    dlt = user.cart.objects.filter(person_id=uname)
+
         
-    return render(request, 'cart.html',{'uname':uname})
+    return render(request, 'cart.html',{'uname':uname,'pr':dlt})
+
+def delete(request, id, uname):
+
+
+    if id:
+        dlt = user.cart.objects.filter(id=id)
+        dlt.delete()
+        
+        dlt = user.cart.objects.filter(person_id=uname)
+
+
+    return render(request, 'cart.html',{'uname':uname,'pr':dlt})

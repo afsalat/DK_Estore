@@ -11,7 +11,7 @@ Clone the repository:
 
 Change to the project directory:
 
-### 'cd your-django-project'
+### `cd your-django-project`
 
 Create a virtual environment and activate it:
 

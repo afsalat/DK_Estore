@@ -5,7 +5,7 @@ This is a Django project for building web applications.
 
 Clone the repository:
 
- ### (git clone https://github.com/your-username/your-django-project.git)
+ ### `git clone https://github.com/afsalat/DK_Estore.git`
 
 Change to the project directory:
 
@@ -13,10 +13,9 @@ Change to the project directory:
 
 Create a virtual environment and activate it:
 
-bash
 Copy code
-python3 -m venv env
-source env/bin/activate
+### `python3 -m venv env
+### source env/bin/activate`
 
 Install the project dependencies:
 Copy code

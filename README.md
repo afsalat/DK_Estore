@@ -1,7 +1,9 @@
 # DK_Estore
 This is a Django project for building web applications.
 
-
+<br/>
+<br/>
+<br/>
 ## Installation
 
 Clone the repository:

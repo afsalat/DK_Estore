@@ -13,13 +13,13 @@ Change to the project directory:
 
 Create a virtual environment and activate it:
 
-| Copy code
+> Copy code
 ### `python3 -m venv env`
 ### `source env/bin/activate`
 
 Install the project dependencies:
 
-Copy code
+> Copy code
 ### `pip install -r requirements.txt`
 
 ## Configuration
@@ -27,37 +27,50 @@ Copy code
 Create a .env file in the project root and set the required environment variables:
 
 makefile
-Copy code
-SECRET_KEY=your_secret_key
-DEBUG=True
-DATABASE_URL=your_database_url
+> Copy code
+### SECRET_KEY=your_secret_key
+### DEBUG=True
+### DATABASE_URL=your_database_url
 Update the database settings in settings.py with your database credentials.
-Database Setup
+
+## Database Setup
+
 Apply database migrations:
-Copy code
-python manage.py migrate
+
+> Copy code
+### `python manage.py migrate`
+
 (Optional) Load initial data:
-Copy code
-python manage.py loaddata initial_data.json
-Usage
+
+> Copy code
+### `python manage.py loaddata initial_data.json`
+
+## Usage
+
 Start the development server:
-Copy code
+
+> Copy code
 python manage.py runserver
+
 Access the application in your web browser at http://localhost:8000.
-Running Tests
+
+## Running Tests
+
 To run the tests, use the following command:
 
-bash
-Copy code
+> Copy code
 python manage.py test
-Deployment
+
+
+## Deployment
 For deployment, you can use any web server that supports Django applications. Some popular choices include:
 
 Apache with mod_wsgi
 Nginx with Gunicorn
 Please refer to the Django documentation for detailed deployment instructions.
 
-Contributing
+## Contributing
+
 Contributions are welcome! If you would like to contribute to this project, please follow these steps:
 
 Fork the repository.

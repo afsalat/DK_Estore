@@ -5,10 +5,13 @@ This is a Django project for building web applications.
 
 Clone the repository:
 
-###git clone https://github.com/your-username/your-django-project.git
+###git clone https:
+
+//github.com/your-username/your-django-project.git
 
 Change to the project directory:
-###cd your-django-project
+
+### 'cd your-django-project'
 
 Create a virtual environment and activate it:
 

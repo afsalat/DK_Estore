@@ -89,7 +89,7 @@ Please refer to the Django documentation for detailed deployment instructions.
 
 Contributions are welcome! If you would like to contribute to this project, please follow these steps:
 
-Fork the repository.
+Fork the repository.<br/>
 Create a new branch for your feature or bug fix.<br/>
 Make your changes and commit them.<br/>
 Push your changes to your fork.<br/>

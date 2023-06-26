@@ -1,6 +1,7 @@
 # DK_Estore
 This is a Django project for building web applications.
 
+
 ## Installation
 
 Clone the repository:
@@ -22,6 +23,7 @@ Install the project dependencies:
 > Copy code
 ### `pip install -r requirements.txt`
 
+
 ## Configuration
 
 Create a .env file in the project root and set the required environment variables:
@@ -32,6 +34,7 @@ makefile
 ### DEBUG=True
 ### DATABASE_URL=your_database_url
 Update the database settings in settings.py with your database credentials.
+
 
 ## Database Setup
 
@@ -45,6 +48,7 @@ Apply database migrations:
 > Copy code
 ### `python manage.py loaddata initial_data.json`
 
+
 ## Usage
 
 Start the development server:
@@ -54,12 +58,13 @@ python manage.py runserver
 
 Access the application in your web browser at http://localhost:8000.
 
+
 ## Running Tests
 
 To run the tests, use the following command:
 
 > Copy code
-python manage.py test
+### `python manage.py test`
 
 
 ## Deployment
@@ -68,6 +73,7 @@ For deployment, you can use any web server that supports Django applications. So
 Apache with mod_wsgi
 Nginx with Gunicorn
 Please refer to the Django documentation for detailed deployment instructions.
+
 
 ## Contributing
 
@@ -78,9 +84,12 @@ Create a new branch for your feature or bug fix.
 Make your changes and commit them.
 Push your changes to your fork.
 Submit a pull request.
-License
+
+
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-Acknowledgments
+
+## Acknowledgments
 Django - The web framework used in this project.
 Feel free to customize this template to fit your specific Django project's needs.

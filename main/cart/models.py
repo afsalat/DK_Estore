@@ -15,6 +15,7 @@ class cart(models.Model):
     pro_price = models.IntegerField(null=True)
     pro_stock = models.IntegerField(null=True)
     person_id = models.CharField(null=True,max_length=150)
+    count = models.IntegerField(null=True,default=1)
     
 # class order_details(models.Model):
 #     first_name = models.CharField(max_length=150)

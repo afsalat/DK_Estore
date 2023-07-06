@@ -4,6 +4,7 @@ from home import models as home_pro
 from cart import models as user
 
 
+
 def cart_list(request):
     
     return render(request, 'cart.html')
@@ -12,14 +13,40 @@ def log_cart_list(request, uname):
 
     person = user.cart.objects.filter(person_id=uname)
 
+    if request.method == 'POST':
+        ct = request.POST['count']
 
-    return render(request, 'cart.html',{'uname':uname,'pr':person})
+        for ii in person:
+            id = ii.id
+
+        aa = user.cart.objects.get(id=id)
+        aa.count = ct
+        aa.save()
+
+    if request.POST['dd2']:
+
+        for ii in person:
+            # numa = ii.count
+            id = ii.id
+
+
+        numb = 1
+
+        mm = user.cart.objects.get(id=id)
+        mm.count + numb
+        mm.save()
+
+        
+        
+
+
+    return render(request, 'cart.html',{'uname':uname, 'pr':person})
 
 
 def add_to_cart(request, types, id, uname):
 
     if general.all_pro_list.objects.filter(pro_type=types):
-        
+    
         pro = general.all_pro_list.objects.filter(id=id)
     
     elif home_pro.featured_product.objects.filter(pro_type=types):
@@ -71,3 +98,4 @@ def delete(request, id, uname):
 
 
     return render(request, 'cart.html',{'uname':uname,'pr':dlt})
+

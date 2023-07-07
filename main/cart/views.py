@@ -23,7 +23,9 @@ def log_cart_list(request, uname):
         aa.count = ct
         aa.save()
 
-    if request.POST['dd2']:
+    if request.method == 'GET':
+        
+        # te = request.POST.get('is_private', False)
 
         for ii in person:
             # numa = ii.count

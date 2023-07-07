@@ -135,20 +135,20 @@
                                 <div class="input-group quantity mx-auto" style="width: 100px;">
                                     <div class="input-group-btn">
 
+                                        {% csrf_token %}
+                                        {% comment %} <button type="submit" name="dd1" class="btn btn-sm btn-primary btn-minus" value="0" > {% endcomment %}
+                                            <i class="fa fa-minus"></i>
+                                            {% comment %} </button> {% endcomment %}
+                                        </div>
                                         <form action="" method="POST">
-                                            {% csrf_token %}
-                                        <button type="submit" name="dd1" class="btn btn-sm btn-primary btn-minus" value="0" >
-                                        <i class="fa fa-minus"></i>
-                                        </button>
-                                    </div>
                                     <input type="text" name="count" class="form-control form-control-sm bg-secondary border-0 text-center" value="{{i.count}}">
-                                    <div class="input-group-btn">
-                                        <button type="button" name="dd2" class="btn btn-sm btn-primary btn-plus" value="1">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </form>
-
+                                </form>
+                                <div class="input-group-btn">
+                                <form method="GET">
+                                        <input type="button" name="dd1" class="fa fa-plus ">
+                                        
                                     </div>
+                                </form>
                                 </div>
                             </td>
                             <td class="align-middle">$150</td>

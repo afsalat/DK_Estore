@@ -17,15 +17,15 @@ def log_cart_list(request, uname):
         ct = request.POST['count']
 
         for ii in person:
-            id = ii.id
+            uid = ii.id
 
-        aa = user.cart.objects.get(id=id)
+        aa = user.cart.objects.get(id=uid)
         aa.count = ct
         aa.save()
 
     if request.method == 'GET':
         
-        # te = request.POST.get('is_private', False)
+        te = request.POST.get('dd1', True)
 
         for ii in person:
             # numa = ii.count
@@ -35,14 +35,14 @@ def log_cart_list(request, uname):
         numb = 1
 
         mm = user.cart.objects.get(id=id)
-        mm.count + numb
+        mm.count + te
         mm.save()
 
         
         
 
 
-    return render(request, 'cart.html',{'uname':uname, 'pr':person})
+    return render(request, 'cart.html',{'uname':uname, 'pr':person,'num':numb})
 
 
 def add_to_cart(request, types, id, uname):

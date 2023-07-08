@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from product_list import models as general
 from home import models as home_pro
 from cart import models as user
@@ -22,27 +22,29 @@ def log_cart_list(request, uname):
         aa = user.cart.objects.get(id=uid)
         aa.count = ct
         aa.save()
+        redirect('/logged/cart/<str:uname>')
 
     if request.method == 'GET':
         
-        te = request.POST.get('dd1', True)
+        # te = request.POST.get('dd1', True)
 
         for ii in person:
-            # numa = ii.count
+            num = ii.count
             id = ii.id
 
 
-        numb = 1
 
         mm = user.cart.objects.get(id=id)
-        mm.count + te
+        mm.count + 1
         mm.save()
 
+        return render(request, 'cart.html',{'uname':uname, 'pr':person, 'num':num})
+
         
         
 
 
-    return render(request, 'cart.html',{'uname':uname, 'pr':person,'num':numb})
+    return render(request, 'cart.html',{'uname':uname, 'pr':person})
 
 
 def add_to_cart(request, types, id, uname):

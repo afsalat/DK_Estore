@@ -133,29 +133,43 @@
                             <td class="align-middle">${{i.pro_price}}</td>
                             <td class="align-middle">
                                 <div class="input-group quantity mx-auto" style="width: 100px;">
-                                    <div class="input-group-btn">
 
-                                        {% comment %} <button type="submit" name="dd1" class="btn btn-sm btn-primary btn-minus" value="0" > {% endcomment %}
+
+                                    <div class="input-group-btn">
+                                        <!-- <button type="submit" name="dd1" class="btn btn-sm btn-primary btn-minus" value="0" > -->
+                                            <button type="button" onclick="increment1()" class="fa fa-plus"></button>
+
                                             <i class="fa fa-minus"></i>
-                                            {% comment %} </button> {% endcomment %}
-                                        </div>
-                                        <form action="" method="POST">
-                                            {% csrf_token %}
-                                            <input type="text" name="count" class="form-control form-control-sm bg-secondary border-0 text-center" value="{{i.count}}">
+                                        </button>
+                                    </div>
+
+
+                                    <form action="" method="POST">
+                                        {% csrf_token %}
+                                        <input type="text" name="count" id="root1" class="form-control form-control-sm bg-secondary border-0 text-center" value="{{i.count}}">
+                                        <a id="root1"></a>
+                                    </form>
+
+
+                                    <div class="input-group-btn">
+                                        <form method="GET">
+                                            <!-- <button type="button" onclick="increment1()" class="fa fa-plus"></button> -->
                                         </form>
-                                        <div class="input-group-btn">
-                                            <form method="GET">
-                                                <input type="button" name="dd1" class="fa fa-plus " value="{{num}}">
-                                            </form>
-                                        </div>
+                                    </div>
+
+
                                 </div>
                             </td>
                             <td class="align-middle">$150</td>
-                            <td class="align-middle"><a href="/logged/cart/{{i.id}}/{{uname}}"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button><a/></td>
+                            <td class="align-middle">
+                            <td href="/logged/cart/{{i.id}}/{{uname}}">
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </td>
                         </tr>
-                        {% endfor %}
-
-
+                        
+                        
                     </tbody>
                 </table>
             </div>
@@ -195,8 +209,20 @@
 
     <script>
 
-        var1 = document.getElementById('ddi')
-
+      const root1 = document.getElementById('root1')
+      const root2 = document.getElementById('root2')
+      //counter variables
+      let counter1 = 0
+      let counter2 = 0
+      function increment1(){
+        i.count = counter1 + 1
+         root1.innerHTML = i.count
+      }
+      function increment2(){
+         counter2 = counter2 - 1
+         root2.innerHTML = "Counter 2 value: " + counter2
+      }
     </script>
+        {% endfor %}
 
 {% endblock cart %}

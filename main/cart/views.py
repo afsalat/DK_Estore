@@ -22,29 +22,13 @@ def log_cart_list(request, uname):
         aa = user.cart.objects.get(id=uid)
         aa.count = ct
         aa.save()
-        redirect('/logged/cart/<str:uname>')
 
-    if request.method == 'GET':
-        
-        # te = request.POST.get('dd1', True)
+    for x in person:
+        price = x.pro_price
+        count = x.count
+        total = price * count
 
-        for ii in person:
-            num = ii.count
-            id = ii.id
-
-
-
-        mm = user.cart.objects.get(id=id)
-        mm.count + 1
-        mm.save()
-
-        return render(request, 'cart.html',{'uname':uname, 'pr':person, 'num':num})
-
-        
-        
-
-
-    return render(request, 'cart.html',{'uname':uname, 'pr':person})
+    return render(request, 'cart.html',{'uname':uname, 'pr':person, 'total':total})
 
 
 def add_to_cart(request, types, id, uname):
@@ -87,6 +71,16 @@ def add_to_cart(request, types, id, uname):
     ms.save()
 
     dlt = user.cart.objects.filter(person_id=uname)
+
+    if request.method == 'POST':
+        ct = request.POST['count']
+
+        for ii in dlt:
+            uid = ii.id
+
+        aa = user.cart.objects.get(id=uid)
+        aa.count = ct
+        aa.save()
 
         
     return render(request, 'cart.html',{'uname':uname,'pr':dlt})

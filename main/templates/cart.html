@@ -136,39 +136,35 @@
 
 
                                     <div class="input-group-btn">
-                                        <!-- <button type="submit" name="dd1" class="btn btn-sm btn-primary btn-minus" value="0" > -->
-                                            <button type="button" onclick="increment1()" class="fa fa-plus"></button>
+                                            <!-- <i class="fa fa-minus"></i> -->
+                                    </div>
 
-                                            <i class="fa fa-minus"></i>
-                                        </button>
+                                    <div class="input-group-field">
+                                        <form action="" method="POST">
+                                            {% csrf_token %}
+                                            <input type="text" name="count" id="root1" class="form-control form-control-sm bg-secondary border-2 text-center" value="{{i.count}}">
+                                        </form>
                                     </div>
 
 
-                                    <form action="" method="POST">
-                                        {% csrf_token %}
-                                        <input type="text" name="count" id="root1" class="form-control form-control-sm bg-secondary border-0 text-center" value="{{i.count}}">
-                                        <a id="root1"></a>
-                                    </form>
-
-
                                     <div class="input-group-btn">
-                                        <form method="GET">
-                                            <!-- <button type="button" onclick="increment1()" class="fa fa-plus"></button> -->
-                                        </form>
+                                        <!-- <i class="fa fa-plus"></i> -->
                                     </div>
 
 
                                 </div>
                             </td>
-                            <td class="align-middle">$150</td>
+
+                            <td class="align-middle">${{total}}</td>
+                            
                             <td class="align-middle">
-                            <td href="/logged/cart/{{i.id}}/{{uname}}">
+                            <a href="/logged/cart/{{i.id}}/{{uname}}">
                                 <button class="btn btn-sm btn-danger">
                                     <i class="fa fa-times"></i>
                                 </button>
-                            </td>
+                            </a>
                         </tr>
-                        
+                        {% endfor %}
                         
                     </tbody>
                 </table>
@@ -206,23 +202,5 @@
         </div>
     </div>
     <!-- Cart End -->
-
-    <script>
-
-      const root1 = document.getElementById('root1')
-      const root2 = document.getElementById('root2')
-      //counter variables
-      let counter1 = 0
-      let counter2 = 0
-      function increment1(){
-        i.count = counter1 + 1
-         root1.innerHTML = i.count
-      }
-      function increment2(){
-         counter2 = counter2 - 1
-         root2.innerHTML = "Counter 2 value: " + counter2
-      }
-    </script>
-        {% endfor %}
 
 {% endblock cart %}

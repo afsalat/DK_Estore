@@ -17,6 +17,7 @@ class cart(models.Model):
     person_id = models.CharField(null=True,max_length=150)
     count = models.IntegerField(null=True,default=1)
     
+    
 # class order_details(models.Model):
 #     first_name = models.CharField(max_length=150)
 #     last_name = models.CharField(max_length=150)

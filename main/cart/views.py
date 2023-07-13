@@ -23,12 +23,14 @@ def log_cart_list(request, uname):
         aa.count = ct
         aa.save()
 
-    for x in person:
-        price = x.pro_price
-        count = x.count
-        total = price * count
+    if person:
+        for x in person:
+            price = x.pro_price
+            count = x.count
+            total = price * count
+            tt = total
 
-    return render(request, 'cart.html',{'uname':uname, 'pr':person, 'total':total})
+    return render(request, 'cart.html',{'uname':uname, 'pr':person, 'total':tt})
 
 
 def add_to_cart(request, types, id, uname):
@@ -82,8 +84,13 @@ def add_to_cart(request, types, id, uname):
         aa.count = ct
         aa.save()
 
+        for x in dlt:
+            price = x.pro_price
+            count = x.count
+            total = price * count
+
         
-    return render(request, 'cart.html',{'uname':uname,'pr':dlt})
+    return render(request, 'cart.html',{'uname':uname,'pr':dlt,'total':total})
 
 def delete(request, id, uname):
 
@@ -93,6 +100,22 @@ def delete(request, id, uname):
         dlt.delete()
         
         dlt = user.cart.objects.filter(person_id=uname)
+
+    if request.method == 'POST':
+        
+        ct = request.POST['count']
+
+        for ii in dlt:
+            uid = ii.id
+
+        aa = user.cart.objects.get(id=uid)
+        aa.count = ct
+        aa.save()
+
+        for x in dlt:
+            price = x.pro_price
+            count = x.count
+            total = price * count
 
 
     return render(request, 'cart.html',{'uname':uname,'pr':dlt})

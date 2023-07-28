@@ -4,6 +4,7 @@ This is a Django project for building web applications.
 
 ## Installation
 
+
 <br/>
 
 Clone the repository:

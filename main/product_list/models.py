@@ -15,7 +15,7 @@ class all_pro_list(models.Model):
     pro_price = models.IntegerField()
     pro_stock = models.IntegerField()
     pro_slug = models.SlugField(null=True)
-    pro_type = models.CharField(max_length=50, choices=types, default='gt', null=True)
+    pro_type = models.CharField(max_length=50, choices=types, default=types, null=True)
 
 
     def __str__(self):

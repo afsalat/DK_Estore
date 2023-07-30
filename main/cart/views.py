@@ -27,12 +27,11 @@ def log_cart_list(request, uname):
         for x in person:
             price = x.pro_price
             count = x.count
-            total = price * count
-            tt = total
+    total = price * count
 
-    return render(request, 'cart.html',{'uname':uname, 'pr':person, 'total':tt})
+    return render(request, 'cart.html',{'uname':uname, 'pr':person, 'total':total})
 
-
+#                        check type!!!!!!!!!
 def add_to_cart(request, types, id, uname):
 
     if general.all_pro_list.objects.filter(pro_type=types):
@@ -41,11 +40,11 @@ def add_to_cart(request, types, id, uname):
     
     elif home_pro.featured_product.objects.filter(pro_type=types):
 
-        pro = home_pro.featured_product.objects.filter(pro_type=types)
+        pro = home_pro.featured_product.objects.filter(id=id)
 
     elif home_pro.leatest_product.objects.filter(pro_type=types):
 
-        pro = home_pro.leatest_product.objects.filter(pro_type=types)
+        pro = home_pro.leatest_product.objects.filter(id=id)
 
     for i in pro:
         pro_name = i.pro_name
@@ -84,10 +83,10 @@ def add_to_cart(request, types, id, uname):
         aa.count = ct
         aa.save()
 
-        for x in dlt:
-            price = x.pro_price
-            count = x.count
-            total = price * count
+    for x in dlt:
+        price = x.pro_price
+        count = x.count
+    total = price * count
 
         
     return render(request, 'cart.html',{'uname':uname,'pr':dlt,'total':total})

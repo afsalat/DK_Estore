@@ -64,7 +64,7 @@ class leatest_product(models.Model):
     pro_colors = models.CharField(max_length=150,null=True)
     pro_price = models.IntegerField(null=True)
     pro_stock = models.IntegerField(null=True)
-    pro_type = models.CharField(max_length=50, choices=types, default='lt',null=True)
+    pro_type = models.CharField(max_length=50, choices=types, default=types ,null=True)
 
     class Meta:
         verbose_name = ("leatest_products")

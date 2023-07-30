@@ -9,6 +9,8 @@ def cart_list(request):
     
     return render(request, 'cart.html')
 
+
+#                    check form input value 
 def log_cart_list(request, uname):
 
     person = user.cart.objects.filter(person_id=uname)
@@ -31,7 +33,7 @@ def log_cart_list(request, uname):
 
     return render(request, 'cart.html',{'uname':uname, 'pr':person, 'total':total})
 
-#                        check type!!!!!!!!!
+
 def add_to_cart(request, types, id, uname):
 
     if general.all_pro_list.objects.filter(pro_type=types):

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from cart import models as  user
 
+
 def billing(request):
     
     return render(request, 'checkout.html')

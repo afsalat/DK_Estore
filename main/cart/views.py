@@ -10,20 +10,34 @@ def cart_list(request):
     return render(request, 'cart.html')
 
 
-#                    check form input value 
+#                   
 def log_cart_list(request, uname):
 
     person = user.cart.objects.filter(person_id=uname)
 
+    if person:
+        for x in person:
+            price = x.pro_price
+            count = x.count
+    total = price * count
+
+    return render(request, 'cart.html',{'uname':uname, 'pr':person, 'total':total})
+
+
+def after_count(request, uname, pro_name):
+        
+    person = user.cart.objects.filter(person_id=uname)
+
+        
     if request.method == 'POST':
         ct = request.POST['count']
 
-        for ii in person:
-            uid = ii.id
+    for ii in person:
+        uid = ii.id
 
-        aa = user.cart.objects.get(id=uid)
-        aa.count = ct
-        aa.save()
+    aa = user.cart.objects.get(pro_name=pro_name)
+    aa.count = ct
+    aa.save()
 
     if person:
         for x in person:
@@ -57,6 +71,7 @@ def add_to_cart(request, types, id, uname):
         pro_colors = i.pro_colors
         pro_price = i.pro_price
         pro_stock = i.pro_stock
+        pro_type = i.pro_type
         
         
     ms =  user.cart.objects.create(
@@ -68,7 +83,8 @@ def add_to_cart(request, types, id, uname):
         pro_colors=pro_colors,
         pro_price=pro_price,
         pro_stock=pro_stock,
-        person_id=uname
+        person_id=uname,
+        pro_type=pro_type
         )
     
     ms.save()

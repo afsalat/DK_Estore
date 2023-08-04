@@ -146,7 +146,7 @@
                                     </div>
 
                                     <div class="input-group-field">
-                                        <form action="" method="POST">
+                                        <form action="/logged/cart/{{uname}}/{{i.pro_name}}/" method="POST">
                                             {% csrf_token %}
                                             <input type="text" name="count" class="form-control form-control-sm bg-secondary border-2 text-center" value="{{i.count}}">
                                         </form>

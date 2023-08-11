@@ -10,6 +10,8 @@ def cart_list(request):
     return render(request, 'cart.html')
 
 
+
+
 #                   
 def log_cart_list(request, uname):
 

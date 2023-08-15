@@ -6,6 +6,7 @@ This is a Django project for building web applications.
 
 <br/>
 
+
 Clone the repository:
 
  ### `git clone https://github.com/afsalat/DK_Estore.git`

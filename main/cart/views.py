@@ -4,24 +4,22 @@ from home import models as home_pro
 from cart import models as user
 
 
-
 def cart_list(request):
     
     return render(request, 'cart.html')
 
 
-#                   
 def log_cart_list(request, uname):
 
     person = user.cart.objects.filter(person_id=uname)
+    
 
     if person:
         for x in person:
             price = x.pro_price
             count = x.count
-    total = price * count
 
-    return render(request, 'cart.html',{'uname':uname, 'pr':person, 'total':total})
+    return render(request, 'cart.html',{'uname':uname, 'pr':person})
 
 
 def after_count(request, uname, pro_name):
@@ -31,21 +29,20 @@ def after_count(request, uname, pro_name):
         
     if request.method == 'POST':
         ct = request.POST['count']
+        
+        for ii in person:
+            uid = ii.id
 
-    for ii in person:
-        uid = ii.id
+        aa = user.cart.objects.get(person_id=pro_name)
+        aa.count = ct
+        aa.save()
 
-    aa = user.cart.objects.get(pro_name=pro_name)
-    aa.count = ct
-    aa.save()
+    # if person:
+    #     for x in person:
+    #         price = x.pro_price
+    #         count = x.count
 
-    if person:
-        for x in person:
-            price = x.pro_price
-            count = x.count
-    total = price * count
-
-    return render(request, 'cart.html',{'uname':uname, 'pr':person, 'total':total})
+    return render(request, 'cart.html',{'uname':uname, 'pr':person})
 
 
 def add_to_cart(request, types, id, uname):

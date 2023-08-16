@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load mathfilters %}
 
 {% block cart %}
     <!-- Navbar Start -->
@@ -140,7 +141,6 @@
                             <td class="align-middle">
                                 <div class="input-group quantity mx-auto" style="width: 100px;">
 
-
                                     <div class="input-group-btn">
                                             <!-- <i class="fa fa-minus"></i> -->
                                     </div>
@@ -152,18 +152,15 @@
                                         </form>
                                     </div>
 
-
-                                    <div class="input-group-btn">
+                                    {% comment %} <div class="input-group-btn">
                                         <!-- <i class="fa fa-plus"></i> -->
-                                    </div>
-
+                                    </div> {% endcomment %}
 
                                 </div>
 
                             </td>
-                            {% if total %}
-                            <td class="align-middle">${{total}}</td>
-                            {% endif %}
+
+                                <td class="align-middle">$ {{i.count|mul:i.pro_price}}</td>
                             
                             <td class="align-middle">
                             <a href="/logged/cart/{{i.id}}/{{uname}}">
@@ -171,6 +168,7 @@
                                     <i class="fa fa-times"></i>
                                 </button>
                             </a>
+                            </td>
                         </tr>
                         {% endfor %}
                         
@@ -191,7 +189,7 @@
                     <div class="border-bottom pb-2">
                         <div class="d-flex justify-content-between mb-3">
                             <h6>Subtotal</h6>
-                            <h6>$150</h6>
+                            <h6>$</h6>
                         </div>
                         <div class="d-flex justify-content-between">
                             <h6 class="font-weight-medium">Shipping</h6>

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'product_list.apps.ProductListConfig',
     'cart.apps.CartConfig',
     'billing.apps.BillingConfig',
+    'mathfilters',
 ]
 
 MIDDLEWARE = [

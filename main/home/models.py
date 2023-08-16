@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 
 
+
 # global category list
 
 class category(models.Model):

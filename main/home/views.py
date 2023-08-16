@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render, HttpResponse
 from .models import category, featured_product, leatest_product, footer_details,register
 
+
 # Create your views here.
 
 def entry(request):

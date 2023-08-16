@@ -3,7 +3,6 @@ from home import models as mok
 
 
 
-
 class cart(models.Model):
 
     pro_name = models.CharField(max_length=150)

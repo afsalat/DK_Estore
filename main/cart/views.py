@@ -9,6 +9,12 @@ def cart_list(request):
     return render(request, 'cart.html')
 
 
+<<<<<<< HEAD
+=======
+
+
+#                   
+>>>>>>> f5b8dc18419cb4531e2c9355f04f7b8cd543d990
 def log_cart_list(request, uname):
 
     person = user.cart.objects.filter(person_id=uname)

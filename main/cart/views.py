@@ -4,6 +4,7 @@ from home import models as home_pro
 from cart import models as user
 
 
+
 def cart_list(request):
     
     return render(request, 'cart.html')

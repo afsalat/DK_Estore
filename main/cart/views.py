@@ -36,17 +36,16 @@ def after_count(request, uname, pro_price):
     return render(request, 'cart.html',{'uname':uname, 'pr':items})
 
 
-def add_to_cart(request, types, id, uname):
+def add_to_cart(request, types, id, price, uname):
 
-# problem is : the addtional product add at the time change the already added product countity
-# created a new data field
 
-    if  user.cart.objects.filter(pro_type=types):
-
-        aa = user.cart.objects.get(sec_id=id)
-        aa.count = aa.count+1
-        aa.save()
-
+    if user.cart.objects.filter(trd_id=id+price):
+        
+        # try:
+            aa = user.cart.objects.get(sec_id=id+price)
+            aa.count = aa.count+1
+            aa.save()
+        # except:
 
 
 
@@ -87,7 +86,8 @@ def add_to_cart(request, types, id, uname):
             pro_stock=pro_stock,
             person_id=uname,
             pro_type=pro_type,
-            sec_id = id
+            sec_id = id + pro_price,
+            trd_id = id + pro_price
 
             )
         
@@ -98,13 +98,12 @@ def add_to_cart(request, types, id, uname):
     items = user.cart.objects.filter(person_id=uname)
 
     if request.method == 'POST':
-        ct = request.POST['count']
 
         for ii in items:
             uid = ii.id
 
         aa = user.cart.objects.get(id=uid)
-        aa.count = ct
+        aa.count = request.POST['count']
         aa.save()
 
         

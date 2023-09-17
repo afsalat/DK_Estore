@@ -1,7 +1,6 @@
 
 
 
-
 # DK_Estore
 
 This is a Django project for building web applications.

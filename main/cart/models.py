@@ -18,6 +18,7 @@ class cart(models.Model):
     pro_type = models.CharField(max_length=50 ,null=True)
     sec_id = models.IntegerField(null=True)
     trd_id = models.IntegerField(null=True)
+
     
     
 # class order_details(models.Model):

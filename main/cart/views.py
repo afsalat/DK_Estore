@@ -13,11 +13,21 @@ def cart_list(request):
 
 def log_cart_list(request, uname):
 
+
+
     items = user.cart.objects.filter(person_id=uname)
+
+    if items:
+        sub_total= 0
+        for con in items:
+            sub_1 = con.pro_price * con.count
+            sub_total = sub_total + sub_1
+    else:
+        sub_total = " "
     
 
 
-    return render(request, 'cart.html',{'uname':uname, 'pr':items})
+    return render(request, 'cart.html',{'uname':uname, 'pr':items,'st':sub_total})
 
 
 def after_count(request, uname, pro_price):
@@ -97,6 +107,8 @@ def add_to_cart(request, types, id, price, uname):
 
 
     items = user.cart.objects.filter(person_id=uname)
+
+
 
     if request.method == 'POST':
 

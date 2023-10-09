@@ -106,7 +106,7 @@
                     {% if uname %}
                     <a class="breadcrumb-item text-dark" href="/logged/more_products_log/{{uname}}">Shop</a>
                     {% else %}
-                    <a class="breadcrumb-item text-dark" href="/more_products_log/">Shop</a>                    
+                    <a class="breadcrumb-item text-dark" href="/more_products_log/">Shop</a>
                     {% endif %}
 
                     <span class="breadcrumb-item active">Shop List</span>
@@ -190,17 +190,27 @@
                     <div class="border-bottom pb-2">
                         <div class="d-flex justify-content-between mb-3">
                             <h6>Subtotal</h6>
-                            <h6>$</h6>
+                            {% if st %}
+                            <h6>$ {{st}}</h6>
+                            {% else %}
+                            <h6>$hhgj</h6>
+                            {% endif %}
                         </div>
                         <div class="d-flex justify-content-between">
                             <h6 class="font-weight-medium">Shipping</h6>
-                            <h6 class="font-weight-medium">$10</h6>
+                            {% if pr %}
+                            <h6 class="font-weight-medium">$ {{pr.count|mul:"10"}}</h6>
+                            {% else %}
+                            <h6>$ </h6>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="pt-2">
                         <div class="d-flex justify-content-between mt-2">
                             <h5>Total</h5>
-                            <h5>$160</h5>
+                            {% if st %}
+                            <h5>$ {{st}}</h5>
+                            {% endif %}
                         </div>
                         <a href="/logged/billing/{{uname}}" style="text-decoration:none;"><button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Proceed To Checkout</button><a/>
                     </div>

@@ -20,21 +20,41 @@ def log_cart_list(request, uname):
     if items:
         sub_total= 0
         for con in items:
+
             sub_1 = con.pro_price * con.count
             sub_total = sub_total + sub_1
+
+            shipping = con.count * 10
+            Total = shipping + sub_total
     else:
         sub_total = " "
     
 
 
-    return render(request, 'cart.html',{'uname':uname, 'pr':items,'st':sub_total})
+    return render(request, 'cart.html',{'uname':uname, 'pr':items,'st':sub_total,'t':Total})
+
+
+
 
 
 def after_count(request, uname, pro_price):
         
     items = user.cart.objects.filter(person_id=uname)
 
-        
+    if items:
+        sub_total= 0
+        for con in items:
+
+            sub_1 = con.pro_price * con.count
+            sub_total = sub_total + sub_1
+
+            shipping = con.count * 10
+            Total = shipping + sub_total
+    else:
+        sub_total = " "
+    
+
+
     if request.method == 'POST':
         ct = request.POST['count']
         
@@ -44,7 +64,10 @@ def after_count(request, uname, pro_price):
         aa.save()
 
 
-    return render(request, 'cart.html',{'uname':uname, 'pr':items})
+    return render(request, 'cart.html',{'uname':uname, 'pr':items,'st':sub_total,'t':Total})
+
+
+
 
 
 def add_to_cart(request, types, id, price, uname):
@@ -108,6 +131,19 @@ def add_to_cart(request, types, id, price, uname):
 
     items = user.cart.objects.filter(person_id=uname)
 
+    if items:
+        sub_total= 0
+        for con in items:
+
+            sub_1 = con.pro_price * con.count
+            sub_total = sub_total + sub_1
+
+            shipping = con.count * 10
+            Total = shipping + sub_total
+    else:
+        sub_total = " "
+    
+
 
 
     if request.method == 'POST':
@@ -120,9 +156,14 @@ def add_to_cart(request, types, id, price, uname):
         aa.save()
 
         
-    return render(request, 'cart.html',{'uname':uname,'pr':items})
+    return render(request, 'cart.html',{'uname':uname,'pr':items,'st':sub_total,'t':Total})
+
+
+
 
 def delete(request, id, uname):
+
+    items = user.cart.objects.filter(person_id=uname)
 
 
     if id:
@@ -142,6 +183,19 @@ def delete(request, id, uname):
         aa.count = ct
         aa.save()
 
+    if items:
+        sub_total = 0
+        for con in items:
 
-    return render(request, 'cart.html',{'uname':uname,'pr':items})
+            sub_1 = con.pro_price * con.count
+            sub_total = sub_total + sub_1
+
+            shipping = con.count * 10
+            Total = shipping + sub_total
+    else:
+        sub_total = " "
+    
+
+
+    return render(request, 'cart.html',{'uname':uname,'pr':items,'st':sub_total,'t':Total})
 

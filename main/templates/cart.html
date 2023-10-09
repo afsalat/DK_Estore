@@ -193,7 +193,7 @@
                             {% if st %}
                             <h6>$ {{st}}</h6>
                             {% else %}
-                            <h6>$hhgj</h6>
+                            <h6>$ 0.00</h6>
                             {% endif %}
                         </div>
                         <div class="d-flex justify-content-between">
@@ -201,15 +201,17 @@
                             {% if pr %}
                             <h6 class="font-weight-medium">$ {{pr.count|mul:"10"}}</h6>
                             {% else %}
-                            <h6>$ </h6>
+                            <h6>$ 0.00</h6>
                             {% endif %}
                         </div>
                     </div>
                     <div class="pt-2">
                         <div class="d-flex justify-content-between mt-2">
                             <h5>Total</h5>
-                            {% if st %}
-                            <h5>$ {{st}}</h5>
+                            {% if t %}
+                            <h5>$ {{t}}</h5>
+                            {% else %}
+                            <h5></h5>
                             {% endif %}
                         </div>
                         <a href="/logged/billing/{{uname}}" style="text-decoration:none;"><button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Proceed To Checkout</button><a/>

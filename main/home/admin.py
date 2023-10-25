@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import featured_product,category,leatest_product,footer_details, register
 
+
 # Register your models here.
 
 class cateadmin(admin.ModelAdmin):

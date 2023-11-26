@@ -13,5 +13,6 @@ class order_list(models.Model):
     state = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
     pin = models.IntegerField()
-    
+
+
     

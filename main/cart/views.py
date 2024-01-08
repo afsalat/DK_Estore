@@ -1,8 +1,8 @@
+
 from django.shortcuts import redirect, render
 from product_list import models as general
 from home import models as home_pro
 from cart import models as user
-
 
 
 
